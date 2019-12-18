@@ -1,0 +1,13 @@
+View Heroku Logs (tail) :
+```
+heroku logs --tail -a resurface-dev     
+```
+Heroku SSH:
+```
+heroku ps:exec -a resurface-dev
+```
+
+Execute a command in Heroku app:
+```
+heroku run /app/php/bin/php /app/www/artisan migrate -a resurface-dev
+```
