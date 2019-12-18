@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,YAAa;EACT,gBAAgB,EAAE,kBAAyB;EAC3C,YAAY,EAAE,kBAAyB;EAEvC,kBAAQ;IACJ,gBAAgB,EAAE,kBAAsC;IACxD,YAAY,EAAE,kBAAsC;;AAI5D,uCAAwC;EACpC,UAAU,EAAE,kBAAyB;EACrC,YAAY,EAAE,kBAAyB;;AAG3C,UAAW;EACP,KAAK,EAAE,kBAAyB",
+"sources": ["../../resources/assets/sass/tom.scss"],
+"names": [],
+"file": "tom.css"
+}

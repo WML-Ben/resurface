@@ -1,0 +1,245 @@
+@import url("fontello/css/icon_set_1.css");
+@import url("fontello/css/fontello.css");
+
+#filters_col {
+    background-color: #FFF;
+    padding: 15px 10px 15px 15px;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    margin-bottom: 25px;
+}
+a#filters_col_bt .icon_set_1_icon-65 {
+    font-size: 20px;
+    position: relative;
+    top: 0px;
+    margin-right: 5px;
+}
+a#filters_col_bt {
+    color: #575555;
+}
+.filter_type h6 {
+    border-top: 1px solid #DDD;
+    margin: 10px 0px;
+    padding: 10px 0px 0px;
+    font-size: 14px;
+}
+.filter_type ul li label {
+    color: #8D8D8D;
+	font-weight: normal;
+	font-size: 13px;
+}
+.styled-select-filters {
+    width: 100%;
+    overflow: hidden;
+    height: 34px;
+    background: #FFF url("../../../images/down_arrow_select_filters.png") no-repeat scroll right center;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #DDD;
+    display: block;
+}
+.styled-select-filters select {
+    background: transparent none repeat scroll 0% 0%;
+    width: 107%;
+    padding: 7px 5px 5px 10px;
+    border: 0px none;
+    border-radius: 0px;
+    height: 31px;
+    margin: 0px;
+    font-weight: 400;
+    -moz-appearance: window;
+    cursor: pointer;
+    font-size: 12px;
+    color: #888;
+}
+.items-list .pagination-container .pagination-pages .pagination-pages-inner {
+    display: inline-block;
+    width: 180px;
+    margin: 0px auto 8px;
+}
+.items-list .pagination-container .pagination-info {
+    margin-top: 3px !important;
+}
+.items-list .pagination-container .pagination-pages .pagination-pages-inner label {;
+    margin-top: 3px !important;
+	font-weight: normal;
+}
+.items-list .tools {
+    background: #EEE none repeat scroll 0% 0%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+a.bt_filters {
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: 6px 8px;
+    color: #888;
+    display: inline-block;
+}
+.items-list .search-container .search-input-container {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+.items-list .search-container .search-input-container .search-input {
+    height: 41px;
+    position: relative;
+    vertical-align: top;
+    border: 1px solid #DDD;
+    display: inline-block;
+    color: #626262;
+    outline: medium none;
+    width: 100%;
+    padding: 10px 120px 10px 10px;
+}
+.items-list .search-container .search-button {
+    position: absolute;
+    top: 0px;
+    right: 16px;
+    display: inline-block;
+    width: 95px;
+    height: 41px;
+}
+.items-list .search-container .reset-button {
+    position: absolute;
+    top: 0px;
+    right: 110px;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    padding: 10px ;
+    margin: 0px;
+    border: none;
+    background-color: inherit;
+}
+.items-list .search-container .reset-button.equis {
+    top: -7px;
+    right: 111px;
+    font-size: 22px;
+}
+.items-list .search-container .reset-button.equis {
+    color: #9E9E9E;
+}
+.items-list .search-container .reset-button.equis:hover {
+    color: #333343;
+}
+.items-list .needle-error {
+
+}
+.items-list #needle-error {
+    display: block !important;
+    margin-top: 3px;
+    padding: 0px 3px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-style: normal;
+    line-height: normal;
+    font-size: 0.85em;
+    color: #C0383C;
+    text-align: left;
+}
+
+    /* iCheck plugin Square skin, grey
+    ----------------------------------- */
+.icheckbox_square-grey,
+.iradio_square-grey {
+	display: inline-block;
+	*display: inline;
+	vertical-align: middle;
+	margin: 0 10px 0 0;
+	padding: 0;
+	width: 22px;
+	height: 22px;
+	background: url(../images/grey.png) no-repeat;
+	border: none;
+	cursor: pointer;
+}
+
+.icheckbox_square-grey {
+	background-position: 0 0;
+}
+.icheckbox_square-grey.hover {
+	background-position: -24px 0;
+}
+.icheckbox_square-grey.checked {
+	background-position: -48px 0;
+}
+.icheckbox_square-grey.disabled {
+	background-position: -72px 0;
+	cursor: default;
+}
+.icheckbox_square-grey.checked.disabled {
+	background-position: -96px 0;
+}
+
+.iradio_square-grey {
+	background-position: -120px 0;
+}
+.iradio_square-grey.hover {
+	background-position: -144px 0;
+}
+.iradio_square-grey.checked {
+	background-position: -168px 0;
+}
+.iradio_square-grey.disabled {
+	background-position: -192px 0;
+	cursor: default;
+}
+.iradio_square-grey.checked.disabled {
+	background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+	.icheckbox_square-grey,
+	.iradio_square-grey {
+		background-image: url(../images/grey@2x.png);
+		-webkit-background-size: 240px 24px;
+		background-size: 240px 24px;
+	}
+}
+
+.items-list .filter_type ul {
+	list-style:none;
+	padding:0;
+	margin:0 0 15px 0;
+}
+.items-list .filter_type ul li .rating {
+	font-size:16px;
+	left:-7px;
+	position:relative;
+	top:3px;
+}
+.items-list .filter_type h6 {
+	border-top: 1px solid #ddd;
+	margin:15px 0;
+	padding:15px 0 0 0;
+}
+.items-list .blog-list .blog-item .blog-caption {
+    padding: 4px 20px 10px ;
+}
+.items-list .blog-list .blog-item .blog-image {
+    padding: 4px;
+}
+.items-list .blog-list .blog-item .sub-post-title span {
+    color: #9C9999;
+    font-size: 12px;
+}
+.items-list .styled-select-filters {
+    background: #FFF url("../../../images/down_arrow_select_filters.png") no-repeat scroll right center;
+}
+
+.items-list .ribbon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 85px;
+    height: 85px;
+    z-index: 1;
+    overflow: auto;
+}
+.items-list .ribbon.featured_en {
+    background: transparent url("../../../images/top-left-featured_en.png") no-repeat scroll 0px 0px;
+}
+.items-list .ribbon.featured_sp {
+    background: transparent url("../../../images/top-left-featured_sp.png") no-repeat scroll 0px 0px;
+}

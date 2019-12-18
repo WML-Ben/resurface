@@ -1,0 +1,119 @@
+// === RESPONSIVE ===
+
+// $tiny-screens: 320px;
+// $small-screens: 480px;
+// $medium-screens: 768px;
+// $large-screens: 991px;
+// $wide-screens: 1280px;
+
+@mixin tiny-screens {
+    @media only screen and (max-width: $tiny-screens) {
+        #test-media {
+            width: $tiny-screens;
+        }
+        @content;
+    }
+}
+@mixin small-screens {
+    @media only screen and (min-width: $tiny-screens + 1) and (max-width: $small-screens) {
+        #test-media {
+            width: $small-screens;
+        }
+        @content;
+    }
+}
+@mixin medium-screens {
+    @media only screen and (min-width: $small-screens + 1) and (max-width: $medium-screens) {
+        #test-media {
+            width: $medium-screens;
+        }
+        @content;
+    }
+}
+@mixin large-screens {
+    @media only screen and (min-width: $medium-screens + 1) and (max-width: $large-screens) {
+        #test-media {
+            width: $large-screens;
+        }
+        @content;
+    }
+}
+@mixin wide-screens {
+    @media only screen and (min-width: $large-screens + 1) and (max-width: $wide-screens) {
+        #test-media {
+            width: $wide-screens;
+        }
+        @content;
+    }
+}
+@mixin tv-screens {
+    @media only screen and (min-width: $wide-screens + 1) {
+        @content;
+    }
+}
+@mixin not-tiny-screens {
+    @media only screen and (min-width: $tiny-screens + 1) {
+        @content;
+    }
+}
+// tiny and small screens:
+@mixin mobile-screens {
+    @media only screen and (max-width: $small-screens) {
+        @content;
+    }
+}
+// except tiny and small screens:
+@mixin not-mobile-screens {
+    @media only screen and (min-width: $small-screens + 1) {
+        @content;
+    }
+}
+@mixin apply-only-to-xs {
+    body.xs {
+        @content;
+    }
+}
+
+@mixin apply-only-to-sm {
+    body.sm {
+        @content;
+    }
+}
+
+@mixin apply-only-to-md {
+    body.md {
+        @content;
+    }
+}
+
+@mixin apply-only-to-lg {
+    body.lg {
+        @content;
+    }
+}
+
+@mixin apply-except-xs {
+    body:not(.xs) {
+        @content;
+    }
+}
+
+@mixin google-font($font) {
+    $font: unquote($font);
+    @import url(https://fonts.googleapis.com/css?family=#{$font});
+}
+
+@mixin box-shadow($shadows...) {
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+@mixin rounded($radius: 6px) {
+    border-radius: $radius;
+}
+
+@mixin box($radius: 6px, $border: 1px solid #999) {
+    @include rounded($radius);
+    border: $border;
+}

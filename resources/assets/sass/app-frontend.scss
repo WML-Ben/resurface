@@ -1,0 +1,87 @@
+@import "partials/functions";
+@import "partials/variables";
+@import "partials/mixins";
+
+@include google-font('Alegreya+Sans');
+@include google-font('Titillium+Web');
+
+/* Spinner */
+#spinner {
+    background: rgba(48, 48, 48, 0.46) center center;
+    z-index: 100000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+#spinner i {
+    z-index: 100001;
+    position: fixed;
+    top: 165px;
+    left: 49%;
+    font-size: 40px;
+    color: white;
+}
+body.xs {
+    #spinner i {
+        top: 150px;
+    }
+}
+
+$spinner-color: #FFF;
+
+#spinner_with_text {
+    background: rgba(48, 48, 48, 0.89) center center;
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .spinner-content {
+        z-index: 100001;
+        position: fixed;
+        top: 150px;
+        font-size: 15px;
+        font-weight: 400;
+        color: white;
+        border: 1px solid $spinner-color;
+        padding: 4px 8px 4px 50px;
+        border-radius: 6px;
+        background-color: #d6b161;
+
+        i {
+            position: absolute;
+            font-size: 32px;
+            top: 10px;
+            left: 10px;
+            z-index: 100001;
+            color: $spinner-color;
+        }
+    }
+}
+/* END Spinner */
+
+body {
+    font: {
+        family: $text-font;
+        size: em(18px);
+    }
+    color: $text-color;
+    background-color: $body-background-color;
+}
+
+h1, h2, h3, h4 {
+    font-family: $headline-font;
+}
+
+p {
+    font-family: $text-font;
+}
+
+a {
+    color: $link-color;
+
+    &:hover {
+        color: darken($link-color, 15%);
+    }
+}
+

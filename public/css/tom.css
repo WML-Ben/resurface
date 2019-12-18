@@ -1,0 +1,15 @@
+.btn-primary {
+  background-color: #119b49 !important;
+  border-color: #119b49 !important; }
+  .btn-primary:hover {
+    background-color: #13ad52 !important;
+    border-color: #13ad52 !important; }
+
+.switch-primary > input:checked + label {
+  background: #119b49 !important;
+  border-color: #119b49 !important; }
+
+.main-link {
+  color: #119b49 !important; }
+
+/*# sourceMappingURL=tom.css.map */

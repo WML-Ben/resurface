@@ -1,0 +1,20 @@
+$default-color: #119b49;
+
+.btn-primary {
+    background-color: $default-color !important;
+    border-color: $default-color !important;
+
+    &:hover {
+        background-color: lighten($default-color, 4%) !important;
+        border-color: lighten($default-color, 4%) !important;
+    }
+}
+
+.switch-primary > input:checked + label {
+    background: $default-color !important;
+    border-color: $default-color !important;
+}
+
+.main-link {
+    color: $default-color !important;
+}

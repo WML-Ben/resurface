@@ -1,0 +1,31 @@
+$spinner-color: #FFF;
+
+#spinner_with_text {
+    background: rgba(48, 48, 48, 0.89) center center;
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .spinner-content {
+        z-index: 100001;
+        position: fixed;
+        top: 150px;
+        font-size: 15px;
+        font-weight: 400;
+        color: white;
+        border: 1px solid $spinner-color;
+        padding: 4px 8px 4px 50px;
+        border-radius: 6px;
+        background-color: #d6b161;
+
+        i {
+            position: absolute;
+            font-size: 32px;
+            top: 10px;
+            left: 10px;
+            z-index: 100001;
+            color: $spinner-color;
+        }
+    }
+}

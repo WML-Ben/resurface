@@ -1,0 +1,2 @@
+<button id="{{ !empty($params['cancel-id']) ? $params['cancel-id'] : 'cancel-button' }}" class="button btn-default mr10">{{ !empty($params['cancel-label']) ? $params['cancel-label'] : 'Cancel' }}</button>
+{!! Form::submit(!empty($params['submit-label']) ? $params['submit-label'] : 'Submit', ['class' => 'button btn-primary' . (!empty($params['class']) ? ' ' . $params['class'] : ''), 'id' => !empty($params['submit-id']) ? $params['submit-id'] : 'submit-button']) !!}

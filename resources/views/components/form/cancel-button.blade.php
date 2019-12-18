@@ -1,0 +1,2 @@
+<button type="button" id="{{ !empty($params['cancel-id']) ? $params['cancel-id'] : 'cancel-button' }}" class="button btn-default mr10">{{ !empty($params['cancel-label']) ? $params['cancel-label'] : 'Cancel' }}</button>
+<button type="button" id="{{ !empty($params['button-id']) ? $params['button-id'] : 'button-button' }}" class="button btn-primary">{{ $buttonLabel }}</button>

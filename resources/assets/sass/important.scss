@@ -1,0 +1,612 @@
+/** JVC v-2.2.1  2017-05-03  */
+
+/* === PADDINGS and MARGINS === */
+
+$directions: (t:top, r:right, b:bottom, l:left);
+$screens: (xs:xs, sm:sm, md:md, lg:lg, not-xs:not-xs);
+
+@mixin paddings-and-margins($start, $stop, $step, $orientations, $viewports)
+{
+    $iterator: $start;
+    @while $iterator <= $stop {
+        .p#{$iterator} {
+            padding: $iterator * 1px !important;
+        }
+        @each $orientation-key, $orientation-value in $orientations {
+            .p#{$orientation-key}#{$iterator} {
+                padding-#{$orientation-value}: $iterator * 1px !important;
+            }
+        }
+        .ptb#{$iterator} {
+            padding-top: $iterator * 1px !important;
+            padding-bottom: $iterator * 1px !important;
+        }
+        .plr#{$iterator} {
+            padding-left: $iterator * 1px !important;
+            padding-right: $iterator * 1px !important;
+        }
+        @each $viewport-key, $viewport-value in $viewports {
+            body.#{$viewport-value} .#{$viewport-value}-p#{$iterator} {
+                padding: $iterator * 1px !important;
+            }
+            @each $orientation-key, $orientation-value in $orientations {
+                body.#{$viewport-value} .#{$viewport-value}-p#{$orientation-key}#{$iterator} {
+                    padding-#{$orientation-value}: $iterator * 1px !important;
+                }
+            }
+            body.#{$viewport-value} .#{$viewport-value}-ptb#{$iterator} {
+                padding-top: $iterator * 1px !important;
+                padding-bottom: $iterator * 1px !important;
+            }
+            body.#{$viewport-value} .#{$viewport-value}-plr#{$iterator} {
+                padding-left: $iterator * 1px !important;
+                padding-right: $iterator * 1px !important;
+            }
+        }
+
+        .m#{$iterator} {
+            margin: $iterator * 1px !important;
+        }
+        @each $orientation-key, $orientation-value in $orientations {
+            .m#{$orientation-key}#{$iterator} {
+                margin-#{$orientation-value}: $iterator * 1px !important;
+            }
+        }
+        .mtb#{$iterator} {
+            margin-top: $iterator * 1px !important;
+            margin-bottom: $iterator * 1px !important;
+        }
+        .mlr#{$iterator} {
+            margin-left: $iterator * 1px !important;
+            margin-right: $iterator * 1px !important;
+        }
+        .mtba#{$iterator} {
+            margin: $iterator * 1px auto !important;
+        }
+        .mlra#{$iterator} {
+            margin: auto $iterator * 1px !important;
+        }
+        @each $viewport-key, $viewport-value in $viewports {
+            body.#{$viewport-value} .#{$viewport-value}-m#{$iterator} {
+                margin: $iterator * 1px !important;
+            }
+            @each $orientation-key, $orientation-value in $orientations {
+                body.#{$viewport-value} .#{$viewport-value}-m#{$orientation-key}#{$iterator} {
+                    margin-#{$orientation-value}: $iterator * 1px !important;
+                }
+            }
+            body.#{$viewport-value} .#{$viewport-value}-mtb#{$iterator} {
+                margin-top: $iterator * 1px !important;
+                margin-bottom: $iterator * 1px !important;
+            }
+            body.#{$viewport-value} .#{$viewport-value}-mlr#{$iterator} {
+                margin-left: $iterator * 1px !important;
+                margin-right: $iterator * 1px !important;
+            }
+        }
+
+        $iterator: $iterator + $step;
+    }
+}
+@include paddings-and-margins($start: 0, $stop: 50, $step: 1, $orientations: $directions, $viewports: $screens);
+@include paddings-and-margins($start: 52, $stop: 100, $step: 2, $orientations: $directions, $viewports: $screens);
+@include paddings-and-margins($start: 45, $stop: 100, $step: 5, $orientations: $directions, $viewports: $screens);
+
+@mixin margins_auto($viewports)
+{
+    .ma {
+        margin: auto !important;
+    }
+
+    @each $viewport-key, $viewport-value in $viewports {
+        body.#{$viewport-value} .#{$viewport-value}-ma {
+            margin: auto !important;
+        }
+    }
+}
+@include margins_auto($viewports: $screens);
+
+/* === WIDTHS and HEIGHTS === */
+
+@mixin widths-heights($start, $stop, $step, $viewports)
+{
+    $iterator: $start;
+    @while $iterator <= $stop {
+        .w#{$iterator} {
+            width: $iterator * 1px !important;
+        }
+        @each $viewport-key, $viewport-value in $viewports {
+            body.#{$viewport-value} .#{$viewport-value}-w#{$iterator} {
+                width: $iterator * 1px !important;
+            }
+        }
+
+        .h#{$iterator} {
+            height: $iterator * 1px !important;
+        }
+        @each $viewport-key, $viewport-value in $viewports {
+            body.#{$viewport-value} .#{$viewport-value}-h#{$iterator} {
+                height: $iterator * 1px !important;
+            }
+        }
+
+        $iterator: $iterator + $step;
+    }
+}
+
+@include widths-heights($start: 0, $stop: 50, $step: 1, $viewports: $screens);
+@include widths-heights($start: 52, $stop: 80, $step: 2, $viewports: $screens);
+@include widths-heights($start: 85, $stop: 100, $step: 5, $viewports: $screens);
+@include widths-heights($start: 110, $stop: 200, $step: 10, $viewports: $screens);
+@include widths-heights($start: 220, $stop: 300, $step: 20, $viewports: $screens);
+@include widths-heights($start: 350, $stop: 500, $step: 50, $viewports: $screens);
+@include widths-heights($start: 600, $stop: 1000, $step: 100, $viewports: $screens);
+
+@mixin width_100percent($viewports)
+{
+    .w100perc {
+        width: 100% !important;
+    }
+    @each $viewport-key, $viewport-value in $viewports {
+        body.#{$viewport-value} .#{$viewport-value}-w100perc {
+            width: 100% !important;
+        }
+    }
+}
+@include width_100percent($viewports: $screens);
+
+
+/* === LINE HEIGHTS === */
+
+@mixin line-heights($start, $stop, $step, $viewports)
+{
+    $iterator: $start;
+    @while $iterator <= $stop {
+        .lh#{$iterator} {
+            line-height: #{$iterator}unquote('%') !important;
+        }
+        @each $viewport-key, $viewport-value in $viewports {
+            body.#{$viewport-value} .#{$viewport-value}-lh#{$iterator} {
+                line-height: #{$iterator}unquote('%') !important;
+            }
+        }
+
+        $iterator: $iterator + $step;
+    }
+}
+@include line-heights($start: 100, $stop: 200, $step: 10, $viewports: $screens);
+
+
+/* === FONT SIZES === */
+
+@mixin font-sizes($start, $stop, $step, $viewports)
+{
+    $iterator: $start;
+    @while $iterator <= $stop {
+        .fs#{$iterator} {
+            font-size: $iterator * 1px !important;
+        }
+        @each $viewport-key, $viewport-value in $viewports {
+            body.#{$viewport-value} .#{$viewport-value}-fs#{$iterator} {
+                font-size: $iterator * 1px !important;
+            }
+        }
+
+        $iterator: $iterator + $step;
+    }
+}
+@include font-sizes($start: 8, $stop: 30, $step: 1, $viewports: $screens);
+
+
+/* === FONT STYLES === */
+
+.fwb {
+    font-weight: bold !important;
+}
+.fwn {
+    font-weight: normal !important;
+}
+.fsi {
+    font-style: italic !important;
+}
+
+
+/* === FLOATS === */
+
+@mixin floats($viewports)
+{
+    .fl {
+        float: left !important;
+    }
+    .fr {
+        float: right !important;
+    }
+    .fn {
+        float: none !important;
+    }
+    @each $viewport-key, $viewport-value in $viewports {
+        body.#{$viewport-value} .#{$viewport-value}-fl {
+            float: left !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-fr {
+            float: right !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-fn {
+            float: none !important;
+        }
+    }
+}
+@include floats($viewports: $screens);
+
+/* === TEXT ALIGNMENTS === */
+
+@mixin text_aligments($viewports)
+{
+    .tl {
+        text-align: left !important;
+    }
+    .tr {
+        text-align: right !important;
+    }
+    .tc {
+        text-align: center !important;
+    }
+    .tj {
+        text-align: justify !important;
+    }
+    .tt {
+        vertical-align: top !important;
+    }
+    .tm {
+        vertical-align: middle !important;
+    }
+    .tb {
+        vertical-align: bottom !important;
+    }
+    .ts {
+        align-items: stretch !important;
+    }
+    @each $viewport-key, $viewport-value in $viewports {
+        body.#{$viewport-value} .#{$viewport-value}-tl {
+            text-align: left !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-tr {
+            text-align: right !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-tc {
+            text-align: center !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-tj {
+            text-align: justify !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-tt {
+            vertical-align: top !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-tm {
+            vertical-align: middle !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-tb {
+            vertical-align: bottom !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-ts {
+            align-items: stretch !important;
+        }
+    }
+}
+@include text_aligments($viewports: $screens);
+
+
+/* === TEXT SHADOW === */
+
+@mixin text_shadow($viewports)
+{
+    .tsh {
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.7) !important;
+    }
+    @each $viewport-key, $viewport-value in $viewports {
+        body.#{$viewport-value} .#{$viewport-value}-tsh {
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.7) !important;
+        }
+    }
+}
+@include text_shadow($viewports: $screens);
+
+
+/* === POSITIONS === */
+
+@mixin positions($viewports)
+{
+    .prel {
+        position: relative !important;
+    }
+    .pabs {
+        position: absolute !important;
+    }
+    .pfix {
+        position: fixed !important;
+    }
+    @each $viewport-key, $viewport-value in $viewports {
+        body.#{$viewport-value} .#{$viewport-value}-prel {
+            position: relative !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-pabs {
+            position: absolute !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-pfix {
+            position: fixed !important;
+        }
+    }
+}
+@include positions($viewports: $screens);
+
+
+/* === DISPLAYS === */
+
+@mixin displays($viewports)
+{
+    .db {
+        display: block !important;
+    }
+    .di {
+        display: inline !important;
+    }
+    .dib {
+        display: inline-block !important;
+    }
+    .df {
+        display: -webkit-box !important;
+        display: -moz-box !important;
+        display: -ms-flexbox !important;
+        display: -webkit-flex !important;
+        display: flex !important;
+    }
+    .dt {
+        display: table !important;
+    }
+    .dtr {
+        display: table-row !important;
+    }
+    .dtc {
+        display: table-cell !important;
+    }
+    @each $viewport-key, $viewport-value in $viewports {
+        body.#{$viewport-value} .#{$viewport-value}-db {
+            display: block !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-di {
+            display: inline !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-dib {
+            display: inline-block !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-df {
+            display: -webkit-box !important;
+            display: -moz-box !important;
+            display: -ms-flexbox !important;
+            display: -webkit-flex !important;
+            display: flex !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-dt {
+            display: table !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-dtr {
+            display: table-row !important;
+        }
+        body.#{$viewport-value} .#{$viewport-value}-dtc {
+            display: table-cell !important;
+        }
+    }
+}
+@include displays($viewports: $screens);
+
+
+/* === TOPS, BOTTOMS, LEFTS & RIGHTS === */
+
+@mixin tops-bottoms-lefts-rights($start, $stop, $step, $viewports)
+{
+    $iterator: $start;
+    @while $iterator <= $stop {
+        .top#{$iterator} {
+            top: $iterator * 1px !important;
+        }
+        .bottom#{$iterator} {
+            bottom: $iterator * 1px !important;
+        }
+        .left#{$iterator} {
+            left: $iterator * 1px !important;
+        }
+        .right#{$iterator} {
+            right: $iterator * 1px !important;
+        }
+        @each $viewport-key, $viewport-value in $viewports {
+            body.#{$viewport-value} .#{$viewport-value}-top#{$iterator} {
+                top: $iterator * 1px !important;
+            }
+            body.#{$viewport-value} .#{$viewport-value}-bottom#{$iterator} {
+                bottom: $iterator * 1px !important;
+            }
+            body.#{$viewport-value} .#{$viewport-value}-left#{$iterator} {
+                left: $iterator * 1px !important;
+            }
+            body.#{$viewport-value} .#{$viewport-value}-right#{$iterator} {
+                right: $iterator * 1px !important;
+            }
+        }
+
+        $iterator: $iterator + $step;
+    }
+}
+@include tops-bottoms-lefts-rights($start: -5, $stop: 20, $step: 1, $viewports: $screens);
+
+
+/* === TOOLTIPS === */
+
+.tooltip-custom {
+    .tooltip {
+        position: absolute;
+        z-index: 102000;
+        display: block;
+        visibility: visible;
+        padding: 5px;
+        font-size: 11px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+
+        &.in {
+            opacity: .8;
+            filter: alpha(opacity=80);
+        }
+        &.top {
+            margin-top: -2px;
+
+            .tooltip-arrow {
+                bottom: 0;
+                left: 50%;
+                margin-left: -5px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #000;
+            }
+        }
+        &.right {
+            margin-left: 2px;
+
+            .tooltip-arrow {
+                top: 50%;
+                left: 0;
+                margin-top: -5px;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-right: 5px solid #000;
+            }
+        }
+        &.bottom {
+            margin-top: 2px;
+
+            .tooltip-arrow {
+                top: 0;
+                left: 50%;
+                margin-left: -5px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid #000;
+            }
+        }
+        &.left {
+            margin-left: -2px;
+
+            .tooltip-arrow {
+                top: 50%;
+                right: 0;
+                margin-top: -5px;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid #000;
+            }
+        }
+    }
+
+    .tooltip-inner {
+        max-width: 200px;
+        padding: 4px 10px;
+        color: #FFF;
+        text-align: center;
+        text-decoration: none;
+        background-color: #000;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+    .tooltip-arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+}
+
+
+/* === RESPONSIVE BOOTSTRAP === */
+
+body.xs .xs-hidden,
+body.xs .hide-xs,
+body.sm .sm-hidden,
+body.sm .hide-sm,
+body.md .md-hidden,
+body.md .hide-md,
+body.lg .hide-lg,
+body.lg .lg-hidden {
+    display: none;
+}
+/* hide sm, md and lg */
+body:not(.xs) {
+    .only-xs-visible,
+    .show-only-xs,
+    .hide-not-xs,
+    .not-xs-hidden {
+        display: none;
+    }
+}
+
+/* hide  md and lg */
+body:not(.xs):not(.sm) {
+    .only-xs-sm-visible,
+    .show-only-xs-sm,
+    .hide-not-xs-sm,
+    .not-xs-sm-hidden {
+        display: none;
+    }
+}
+
+/* hide  lg */
+body:not(.lg) {
+    .only-lg-visible,
+    .show-only-lg,
+    .hide-not-lg,
+    .not-lg-hidden {
+        display: none;
+    }
+}
+
+
+/* =====  MASONRY ======= */
+
+.masonry {
+    margin: 1.5em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+
+    .masonry-item {
+        display: inline-block;
+        background: #fff;
+        padding: 1em;
+        margin: 0 0 1.5em;
+        width: 100%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-shadow: 2px 2px 4px 0 #ccc;
+    }
+}
+body.xs .masonry {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+}
+body.sm .masonry {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+}
+body.md .masonry {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+}
+body.lg .masonry {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+}

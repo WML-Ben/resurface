@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+/* Spinner */
+#spinner {
+  background: rgba(48, 48, 48, 0.46) center center;
+  z-index: 100000;
+  position: fixed;
+  top: 0px;
+  left: 0px; }
+
+#spinner i {
+  z-index: 100001;
+  position: fixed;
+  top: 165px;
+  left: 49%;
+  font-size: 40px;
+  color: white; }
+
+body.xs #spinner i {
+  top: 150px; }
+
+#spinner_with_text {
+  background: rgba(48, 48, 48, 0.89) center center;
+  z-index: 100000;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  #spinner_with_text .spinner-content {
+    z-index: 100001;
+    position: fixed;
+    top: 150px;
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    border: 1px solid #FFF;
+    padding: 4px 8px 4px 50px;
+    border-radius: 6px;
+    background-color: #d6b161; }
+    #spinner_with_text .spinner-content i {
+      position: absolute;
+      font-size: 32px;
+      top: 10px;
+      left: 10px;
+      z-index: 100001;
+      color: #FFF; }
+
+/* END Spinner */
+body {
+  font-family: "Alegreya Sans", Arial, sans-serif;
+  font-size: 1.125em;
+  color: #222222;
+  background-color: #fff; }
+
+h1, h2, h3, h4 {
+  font-family: "Titillium Web", Georgia, serif; }
+
+p {
+  font-family: "Alegreya Sans", Arial, sans-serif; }
+
+a {
+  color: #f27731; }
+  a:hover {
+    color: #ca510d; }
+
+/*# sourceMappingURL=app-frontend.css.map */

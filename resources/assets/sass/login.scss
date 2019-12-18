@@ -1,0 +1,54 @@
+$main-color: #119b49;
+
+body {
+    #main {
+        background-image: none !important;
+        background-color: #7fb394  !important;
+    }
+}
+.main-color {
+    color: $main-color !important;
+}
+
+body.login-body.external-page #content .admin-form {
+    max-width: 400px;
+}
+body.login-body .admin-form .panel-body {
+    padding: 25px 25px 0 25px;
+}
+body.login-body .admin-form .button {
+    margin: 0;
+}
+.pr30 {
+    padding-right: 0px !important;
+}
+body.external-page #content .panel-heading {
+    padding: 10px 10px 0;
+}
+body.login-body .alert {
+    position: relative;
+    padding: 14px 28px 15px 15px;
+    margin-bottom: 20px;
+}
+body.login-body .alert-dismissable .close,
+body.login-body .alert-dismissible .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 22px;
+}
+body.login-body .alert-dismissable .close:hover,
+body.login-body .alert-dismissible .close:hover {
+    color: #FFF;
+    opacity: 1;
+}
+body.login-body .ph15 {
+    padding-right: 4px !important;
+}
+.login-logo {
+    img {
+        height: 50px;
+        width: auto;
+    }
+
+}

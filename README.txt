@@ -1,0 +1,5 @@
+- Linux Ubuntu 16.04
+- PHP 7.0
+- MySQL 5.7.24
+- Laravel framework v-5.5
+- The database dump file used is located under sql/ folder.

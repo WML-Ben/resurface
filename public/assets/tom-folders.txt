@@ -1,0 +1,4 @@
+global
+img
+layouts
+pages

@@ -1,0 +1,7 @@
+@function em($pixels, $context: 16px) {
+    @return ($pixels / $context) * 1em;
+}
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
